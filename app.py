@@ -5,7 +5,7 @@ import streamlit as st
 
 st.set_page_config(page_title="Store Sales Predictor", page_icon="📦")
 st.title("📦 Store Sales Predictor")
-
+st.write("Enter product and outlet information to estimate item outlet sales.")
 
 
 @st.cache_resource
