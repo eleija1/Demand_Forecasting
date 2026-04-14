@@ -8,13 +8,20 @@ st.write("App started...")
 st.set_page_config(page_title="Store Sales Predictor", page_icon="📦")
 
 st.title("📦 Store Sales Predictor")
-st.write("Enter the product and outlet details below.")
 
-with open("model_bundle.pkl", "rb") as f:
-    bundle = pickle.load(f)
 
+@st.cache_resource
+def load_model():
+    with open("model_bundle.pkl", "rb") as f:
+        return pickle.load(f)
+
+bundle = load_model()
 model = bundle["model"]
 columns = bundle["columns"]
+
+
+st.write("Enter the product and outlet details below.")
+
 
 def preprocess_input(raw_df: pd.DataFrame) -> pd.DataFrame:
     df = raw_df.copy()
