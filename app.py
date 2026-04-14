@@ -130,7 +130,7 @@ if submitted:
     }])
 
     model_input = preprocess_input(raw_input)
-    prediction = model.predict(model_input)[0]
+     st.session_state.prediction = model.predict(model_input)[0]
 
   if reset:
     st.session_state.prediction = None
