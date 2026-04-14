@@ -5,7 +5,7 @@ import streamlit as st
 
 st.set_page_config(page_title="Store Sales Predictor", page_icon="📦")
 st.title("📦 Store Sales Predictor")
-st.write("App started...")
+
 
 
 @st.cache_resource
@@ -13,14 +13,12 @@ def load_model():
     with open("model_bundle.pkl", "rb") as f:
         return pickle.load(f)
 
-st.write("About to load model...")
+
 bundle = load_model()
-st.write("Model loaded.")
+
 
 model = bundle["model"]
 columns = bundle["columns"]
-
-
 
 
 
