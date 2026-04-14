@@ -2,6 +2,8 @@ import pickle
 import numpy as np
 import pandas as pd
 import streamlit as st
+st.write("App started...")
+
 
 st.set_page_config(page_title="Store Sales Predictor", page_icon="📦")
 
